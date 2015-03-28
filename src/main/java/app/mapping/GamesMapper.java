@@ -1,6 +1,7 @@
-package app;
+package app.mapping;
 
-import app.jsonentities.*;
+import app.MatchesController;
+import app.mapping.jsonentities.*;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;

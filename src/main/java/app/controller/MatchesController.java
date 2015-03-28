@@ -1,6 +1,7 @@
-package app;
+package app.controller;
 
-import app.jsonentities.Match;
+import app.mapping.jsonentities.Match;
+import app.repository.MatchesRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

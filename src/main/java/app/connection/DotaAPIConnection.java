@@ -1,5 +1,6 @@
-package app;
+package app.connection;
 
+import app.GamesMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +31,16 @@ public class DotaAPIConnection {
 
         executorService = Executors.newSingleThreadExecutor();
         executorService.execute(() -> {
+            String lastMatchId = "";
             try {
                 do {
                     final String lastMatches = webTarget
-                            .queryParam("start_at_match_id", gamesMapper.getLastMatchId())
+                            .queryParam("start_at_match_id", lastMatchId)
                             .request(MediaType.APPLICATION_JSON)
                             .get(String.class);
                     gamesMapper.parse(lastMatches);
-                    logger.info("NEXT MATCH ID: {}", gamesMapper.getLastMatchId());
+                    lastMatchId = String.valueOf(Long.parseLong(gamesMapper.getLastMatchId()) -1);
+                    logger.info("NEXT MATCH ID: {}", lastMatchId);
                 } while (true);
 
             } catch (IOException e) {

@@ -1,6 +1,6 @@
-package app;
+package app.repository;
 
-import app.jsonentities.Match;
+import app.mapping.jsonentities.Match;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 public interface MatchesRepository extends ElasticsearchRepository<Match, Long> {

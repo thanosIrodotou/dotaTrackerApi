@@ -11,7 +11,7 @@ import javax.ws.rs.client.WebTarget;
 
 @Configuration
 @ComponentScan
-public class DotaAppConfig {
+public class DotaTrackerConfig {
     private static final String API_URI = "https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/";
     private static final String API_KEY = "80D0C2CA14E87814DB6A3D5A6368DDBB";
 

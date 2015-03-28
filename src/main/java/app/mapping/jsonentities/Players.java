@@ -1,4 +1,4 @@
-package app.jsonentities;
+package app.mapping.jsonentities;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

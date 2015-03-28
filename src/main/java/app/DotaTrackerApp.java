@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "app")
 @EnableAutoConfiguration(exclude = {ElasticConfiguration.class})
-public class DotaTrackerApplication {
+public class DotaTrackerApp {
 
     @Autowired
     private GamesMapper gamesMapper;
 
     public static void main(String[] args) {
-        SpringApplication.run(DotaTrackerApplication.class, args);
+        SpringApplication.run(DotaTrackerApp.class, args);
     }
 }
