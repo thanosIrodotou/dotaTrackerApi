@@ -1,6 +1,6 @@
 package app.mapping;
 
-import app.MatchesController;
+import app.controller.MatchesController;
 import app.mapping.jsonentities.*;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;

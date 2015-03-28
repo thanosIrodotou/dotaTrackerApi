@@ -1,7 +1,7 @@
 package app.cli;
 
-import app.jsonentities.DotaHeroe;
-import app.jsonentities.DotaHeroes;
+import app.mapping.jsonentities.DotaHeroe;
+import app.mapping.jsonentities.DotaHeroes;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

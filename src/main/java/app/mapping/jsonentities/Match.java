@@ -5,20 +5,28 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldIndex;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.Collection;
 
-@Document(indexName = "dotatracker", type = "games", shards = 1, replicas = 0, refreshInterval = "-1")
+@Document(indexName = "dota", type = "matches", shards = 1, replicas = 0, refreshInterval = "-1")
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class Match {
 
     @Id
     private final Long matchId;
     private final Long matchSequenceNumber;
+    @Field(type= FieldType.Date)
     private final Long startTime;
+    @Field(type = FieldType.Long, store = false)
     private final int lobbyType;
+    @Field(type = FieldType.Long, store = false)
     private final int radiantTeamId;
+    @Field(type = FieldType.Long, store = false)
     private final int direTeamId;
+    @Field(type = FieldType.Object, index = FieldIndex.not_analyzed, store = true)
     private final Collection<Players> players;
 
     @JsonCreator
